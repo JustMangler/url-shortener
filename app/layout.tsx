@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ad-Links",
+  title: "EZurl",
   description:
     "URL Shortener designed to pay users for shortening their links!",
 };
