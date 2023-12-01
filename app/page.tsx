@@ -1,4 +1,5 @@
 import Layout from "../components/layout";
+import Form from "../components/form";
 
 export default function Home() {
   return (
@@ -8,11 +9,12 @@ export default function Home() {
           Make <span className="text-green-600">money</span> off short links
           &#129297;
         </h1>
-        <h2 className="text-3xl text-slate-500">
+        <h2 className="text-3xl text-slate-500 pb-10">
           Create a short link, share it with other people, watch the money roll
           in. <br className="md:hidden lg:block" />
           Track your statistics and cash out when you&apos;re ready!
         </h2>
+        <Form />
       </div>
     </Layout>
   );
