@@ -5,6 +5,7 @@ import { FaLock, FaRegCheckCircle } from "react-icons/fa";
 import Link from "next/link";
 import { Formik, Form as FForm, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { Tooltip } from "@nextui-org/react";
 
 export default function Form() {
   const submitForm = async (e: any) => {
@@ -86,13 +87,38 @@ export default function Form() {
                     </label>
 
                     <div className="flex flex-row">
-                      <div
-                        className="flex flex-row text-left items-center justify-between appearance-none border-2 border-gray-400 w-full rounded-lg py-2 px-3 text-gray-400 focus:outline-none bg-gray-100 focus:border-sky-600"
-                        id="inline-full-name"
+                      <Tooltip
+                        content="Change to a custom domain"
+                        delay={0}
+                        closeDelay={0}
+                        color="primary"
+                        motionProps={{
+                          variants: {
+                            exit: {
+                              opacity: 0,
+                              transition: {
+                                duration: 0.1,
+                                ease: "easeIn",
+                              },
+                            },
+                            enter: {
+                              opacity: 1,
+                              transition: {
+                                duration: 0.15,
+                                ease: "easeOut",
+                              },
+                            },
+                          },
+                        }}
                       >
-                        ezurl.link
-                        <FaLock />
-                      </div>
+                        <div
+                          className="cursor-not-allowed flex flex-row text-left items-center justify-between appearance-none border-2 border-gray-400 w-full rounded-lg py-2 px-3 text-gray-400 focus:outline-none bg-gray-100 focus:border-sky-600"
+                          id="inline-full-name"
+                        >
+                          ezurl.link
+                          <FaLock />
+                        </div>
+                      </Tooltip>
                       <div className="flex items-center pl-2">
                         <label>/</label>
                       </div>
@@ -119,28 +145,77 @@ export default function Form() {
                       <label className="block text-lg font-bold text-left pb-2">
                         Time to redirect
                       </label>
-
-                      <div
-                        className="flex flex-row text-left items-center justify-between appearance-none border-2 border-gray-400 w-full rounded-lg py-2 px-3 text-gray-400 focus:outline-none bg-gray-100 focus:border-sky-600"
-                        id="inline-full-name"
+                      <Tooltip
+                        content="Seconds before users are redirected"
+                        delay={0}
+                        closeDelay={0}
+                        color="primary"
+                        motionProps={{
+                          variants: {
+                            exit: {
+                              opacity: 0,
+                              transition: {
+                                duration: 0.1,
+                                ease: "easeIn",
+                              },
+                            },
+                            enter: {
+                              opacity: 1,
+                              transition: {
+                                duration: 0.15,
+                                ease: "easeOut",
+                              },
+                            },
+                          },
+                        }}
                       >
-                        5 seconds
-                        <FaLock />
-                      </div>
+                        <div
+                          className="cursor-not-allowed flex flex-row text-left items-center justify-between appearance-none border-2 border-gray-400 w-full rounded-lg py-2 px-3 text-gray-400 focus:outline-none bg-gray-100 focus:border-sky-600"
+                          id="inline-full-name"
+                        >
+                          5 seconds
+                          <FaLock />
+                        </div>
+                      </Tooltip>
                     </div>
+
                     <div className="flex flex-col items-center">
                       <label className="block text-lg font-bold text-left pb-2">
                         Manual Redirect?
                       </label>
-
-                      <input
-                        id="default-checkbox"
-                        type="checkbox"
-                        value=""
-                        className="w-10 h-10 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                        checked
-                        disabled
-                      />
+                      <Tooltip
+                        content="Have users click a button rather than a redirect"
+                        delay={0}
+                        closeDelay={0}
+                        color="primary"
+                        motionProps={{
+                          variants: {
+                            exit: {
+                              opacity: 0,
+                              transition: {
+                                duration: 0.1,
+                                ease: "easeIn",
+                              },
+                            },
+                            enter: {
+                              opacity: 1,
+                              transition: {
+                                duration: 0.15,
+                                ease: "easeOut",
+                              },
+                            },
+                          },
+                        }}
+                      >
+                        <input
+                          id="default-checkbox"
+                          type="checkbox"
+                          value=""
+                          className="cursor-not-allowed w-10 h-10 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                          checked
+                          disabled
+                        />
+                      </Tooltip>
                     </div>
                   </div>
                   <div className="flex flex-row col-span-1 md:col-span-5 ml-2 pt-3 mb-2 mr-2 gap-4 align-left">

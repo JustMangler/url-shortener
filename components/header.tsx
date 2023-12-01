@@ -27,21 +27,21 @@ export default function Header() {
         </div>
         <div className="hidden text:md lg:flex lg:gap-x-12">
           <a
-            href="#"
+            href="/dashboard"
             className="group font-semibold leading-6 text-gray-900 hover:text-sky-500 p-3"
           >
             Dashboard
             <span className="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-sky-500"></span>
           </a>
           <a
-            href="#"
+            href="/plans"
             className="group font-semibold leading-6 text-gray-900 hover:text-sky-500 p-3"
           >
             Plans
             <span className="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-sky-500" />
           </a>
           <a
-            href="#"
+            href="/how-it-works"
             className="group font-semibold leading-6 text-gray-900 hover:text-sky-500 p-3"
           >
             How It Works
