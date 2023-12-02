@@ -6,13 +6,14 @@ import Script from "next/script";
 interface LayoutProps {
   children?: ReactNode;
   links: boolean;
+  color?: boolean;
   // any props that come into the component
 }
 
-export default function Layout({ children, links }: LayoutProps) {
+export default function Layout({ children, links, color }: LayoutProps) {
   return (
     <div>
-      <Header links={links} />
+      <Header links={links} color={color} />
       <Script
         id="Adsense-id"
         data-ad-client="ca-pub-9679570807975669"

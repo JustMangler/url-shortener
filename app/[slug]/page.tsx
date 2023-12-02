@@ -24,10 +24,24 @@ export const getLongURL = async ({ slug }: { slug: string }) => {
 export default async function Page({ params }: { params: { slug: string } }) {
   const props = await getLongURL(params);
   return (
-    <Layout links={false}>
+    <Layout color={true} links={false}>
       {props.props?.url ? (
-        <div>
-          <RedirectButton secs={5} link={props.props.url} />
+        <div className="flex flex-col absolute top-0 w-screen h-screen mx-auto justify-center items-center gap-5">
+          <h1 className="text-3xl md:text-4xl font-bold text-orange-400">
+            https://ezurl.link/{params.slug}
+          </h1>
+          <h1 className="text-2xl md:text-3xl font-bold">Redirects to:</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-orange-400 pb-10">
+            {props.props.url}...
+          </h1>
+
+          <div className="flex w-full max-w-4xl justify-center">
+            <RedirectButton
+              className="rounded-xl border-2 px-4 py-3 font-bold text-3xl"
+              secs={5}
+              link={props.props.url}
+            />
+          </div>
         </div>
       ) : (
         <div className="flex flex-col fixed w-screen h-screen justify-center items-center gap-5">

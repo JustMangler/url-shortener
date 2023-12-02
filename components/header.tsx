@@ -5,10 +5,11 @@ import { useEffect, useState } from "react";
 
 interface HeaderProps {
   links: boolean;
+  color?: boolean;
   // any props that come into the component
 }
 
-export default function Header({ links }: HeaderProps) {
+export default function Header({ links, color }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const listenScrollEvent = (e: any) => {
     setScrolled(window.scrollY > 0);
@@ -22,8 +23,8 @@ export default function Header({ links }: HeaderProps) {
   return (
     <header
       className={`transition-colors ease-out duration-200 bg-${
-        scrolled ? "white" : "main"
-      } sticky top-0`}
+        scrolled || color ? "white" : "main"
+      } sticky top-0 z-0`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
