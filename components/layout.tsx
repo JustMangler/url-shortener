@@ -5,13 +5,14 @@ import Script from "next/script";
 
 interface LayoutProps {
   children?: ReactNode;
+  links: boolean;
   // any props that come into the component
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ children, links }: LayoutProps) {
   return (
     <div>
-      <Header />
+      <Header links={links} />
       <Script
         id="Adsense-id"
         data-ad-client="ca-pub-9679570807975669"
@@ -19,7 +20,7 @@ export default function Layout({ children }: LayoutProps) {
         strategy="afterInteractive"
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       />
-      <div className="0 auto">
+      <div className="0 auto font-metropolis">
         <main>{children}</main>
       </div>
     </div>

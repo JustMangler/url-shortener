@@ -3,7 +3,7 @@ import Form from "../components/form";
 
 export default function Home() {
   return (
-    <Layout>
+    <Layout links>
       <div className="flex flex-col font-metropolis text-center h-screen bg-main pt-10 gap-3">
         <h1 className="hero text-6xl font-extrabold">
           Make <span className="text-green-600">money</span> off short links
