@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { FaLock, FaRegCheckCircle } from "react-icons/fa";
 import Link from "next/link";
 import { Formik, Form as FForm, Field, ErrorMessage } from "formik";
@@ -19,16 +18,19 @@ export default function Form() {
 
     // Turn our formData state into data we can use with a form submissio
     // POST the data to the URL of the form
-    const resp = await fetch(`http://localhost:4000/api/create`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        long_url: e.long,
-        short_url: e.short,
-      }),
-    })
+    const resp = await fetch(
+      `https://urlshortener.gigalixirapp.com/api/create`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          long_url: e.long,
+          short_url: e.short,
+        }),
+      }
+    )
       .then((response) => response.json())
       .then((data) => console.log(data));
   };

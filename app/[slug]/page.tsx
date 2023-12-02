@@ -5,8 +5,8 @@ import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 import RedirectButton from "@/components/button";
 import { Button } from "@nextui-org/react";
 
-export const getLongURL = async ({ slug }: { slug: string }) => {
-  const url = `http://localhost:4000/api/${slug}`;
+const getLongURL = async ({ slug }: { slug: string }) => {
+  const url = `https://urlshortener.gigalixirapp.com/api/${slug}`;
   const query = await fetch(url, {
     method: "GET",
     headers: {
