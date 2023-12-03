@@ -78,7 +78,7 @@ export default function Form() {
                       type="text"
                       placeholder="Example: https://ezurl.link/super-long-link"
                       name="long"
-                      className="appearance-none border-2 border-gray-400 rounded-lg w-full py-2 px-3 text-gray-700 focus:outline-none focus:bg-white focus:border-sky-600"
+                      className="appearance-none border-2 border-gray-400 rounded-lg font-light w-full py-2 px-3 text-gray-700 focus:outline-none focus:bg-white focus:border-sky-600"
                     />
                     <ErrorMessage name="long" />
                   </div>
@@ -114,7 +114,7 @@ export default function Form() {
                         }}
                       >
                         <div
-                          className="cursor-not-allowed flex flex-row text-left items-center justify-between appearance-none border-2 border-gray-400 w-full rounded-lg py-2 px-3 text-gray-400 focus:outline-none bg-gray-100 focus:border-sky-600"
+                          className="cursor-not-allowed flex flex-row text-left items-center font-light justify-between appearance-none border-2 border-gray-400 w-full rounded-lg py-2 px-3 text-gray-400 focus:outline-none bg-gray-100 focus:border-sky-600"
                           id="inline-full-name"
                         >
                           ezurl.link
@@ -134,7 +134,7 @@ export default function Form() {
                     </label>
 
                     <Field
-                      className="appearance-none border-2 border-gray-400 rounded-lg w-full py-2 px-3 text-gray-700 focus:outline-none focus:bg-white focus:border-sky-600"
+                      className="appearance-none border-2 border-gray-400 rounded-lg w-full font-light py-2 px-3 text-gray-700 focus:outline-none focus:bg-white focus:border-sky-600"
                       id="inline-full-name"
                       type="text"
                       name="short"
@@ -172,7 +172,7 @@ export default function Form() {
                         }}
                       >
                         <div
-                          className="cursor-not-allowed flex flex-row text-left items-center justify-between appearance-none border-2 border-gray-400 w-full rounded-lg py-2 px-3 text-gray-400 focus:outline-none bg-gray-100 focus:border-sky-600"
+                          className="cursor-not-allowed flex flex-row text-left items-center font-light justify-between appearance-none border-2 border-gray-400 w-full rounded-lg py-2 px-3 text-gray-400 focus:outline-none bg-gray-100 focus:border-sky-600"
                           id="inline-full-name"
                         >
                           5 seconds
