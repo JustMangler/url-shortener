@@ -31,7 +31,7 @@ export default function Home() {
           />
           <text>Yearly</text>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full max-w-6xl mt-4 mx-8 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full max-w-6xl mt-4 mx-8 gap-4 pb-12">
           <Card>
             <CardHeader className="flex gap-3 text-center">
               <text className="w-full font-bold">Free</text>
