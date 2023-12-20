@@ -1,9 +1,7 @@
 import Layout from "@/components/layout";
-import { useEffect, useState } from "react";
 import { IoWarning } from "react-icons/io5";
-import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 import RedirectButton from "@/components/button";
-import { Button } from "@nextui-org/react";
+import { headers } from "next/headers";
 
 const getLongURL = async ({ slug }: { slug: string }) => {
   const url = `https://urlshortener.gigalixirapp.com/api/${slug}`;
@@ -16,7 +14,9 @@ const getLongURL = async ({ slug }: { slug: string }) => {
 
   if (query.status === 200) {
     const resp = await query.json();
-    return { props: { url: resp.long_url } };
+    const headersList = headers();
+    const referer: string = headersList.get("referer") || "";
+    return { props: { url: resp.long_url, referer: referer } };
   }
   return { notFound: true };
 };
@@ -40,6 +40,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
               className="rounded-xl border-2 px-4 py-3 font-bold text-3xl"
               secs={5}
               link={props.props.url}
+            />
+            <RedirectButton
+              className="rounded-xl border-2 px-4 py-3 font-bold text-3xl"
+              secs={5}
+              link={props.props.referer}
             />
           </div>
         </div>

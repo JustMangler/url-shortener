@@ -5,19 +5,12 @@ import Link from "next/link";
 import { Formik, Form as FForm, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Tooltip } from "@nextui-org/react";
+import { useState } from "react";
 
 export default function Form() {
-  const submitForm = async (e: any) => {
-    // We don't want the page to refresh
-    console.log(
-      JSON.stringify({
-        long_url: e.long,
-        short_url: e.short,
-      })
-    );
+  const [prevLink, setPrevLink] = useState("");
 
-    // Turn our formData state into data we can use with a form submissio
-    // POST the data to the URL of the form
+  const submitForm = async (e: any) => {
     const resp = await fetch(
       `https://urlshortener.gigalixirapp.com/api/create`,
       {
@@ -32,7 +25,10 @@ export default function Form() {
       }
     )
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        setPrevLink(data.short_url);
+      });
   };
 
   const re =
@@ -235,6 +231,14 @@ export default function Form() {
                         Sign up and start earning &rarr;
                       </button>
                     </Link>
+
+                    {prevLink ? (
+                      <Link href={`/${prevLink}`}>
+                        <button className="rounded-xl">Click Me</button>
+                      </Link>
+                    ) : (
+                      <></>
+                    )}
                   </div>
                 </div>
               </div>
@@ -248,11 +252,11 @@ export default function Form() {
                 </div>
                 <div className="flex flex-row justify-center gap-2">
                   <FaRegCheckCircle className="text-2xl text-sky-600" />
-                  Get paid
+                  $3 Sign Up Bonus!
                 </div>
                 <div className="flex flex-row justify-center gap-2">
                   <FaRegCheckCircle className="text-2xl text-sky-600" />
-                  Free
+                  Get Paid
                 </div>
               </div>
             </FForm>

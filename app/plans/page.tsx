@@ -41,6 +41,7 @@ export default function Home() {
               <h1 className="text-5xl font-extrabold text-slate-700 text-center">
                 $0<span className="text-2xl">/month</span>
               </h1>
+              <div className="h-8"></div>
               <p className="font-bold my-6 px-6 ">
                 <text>Includes:</text>
               </p>
@@ -64,8 +65,14 @@ export default function Home() {
             <Divider />
             <CardBody>
               <h1 className="text-5xl font-extrabold text-slate-700 text-center">
-                $10<span className="text-2xl">/month</span>
+                {annual ? "$10" : "$12"}
+                <span className="text-2xl">/month</span>
               </h1>
+              <div className="h-8 text-center font-light">
+                <text className={annual ? "" : "hidden"}>
+                  (annual charge of $120)
+                </text>
+              </div>
               <p className="font-bold my-6 px-6">
                 <text>Everything in free, plus:</text>
               </p>
@@ -91,6 +98,7 @@ export default function Home() {
               <h1 className="text-5xl font-extrabold text-slate-700 text-center">
                 *<span className="text-2xl">/month</span>
               </h1>
+              <div className="h-8"></div>
               <p className="font-bold my-6 px-6">
                 <text>Customize your own plan:</text>
               </p>
