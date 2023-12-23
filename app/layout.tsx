@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="light">
+    <html lang="en" className="light scroll-smooth">
       <body className="bg-white">
         <Providers>{children}</Providers>
       </body>

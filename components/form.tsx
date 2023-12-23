@@ -23,7 +23,7 @@ export default function Form() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          long_url: e.long,
+          long_url: `http://${e.long.replace(/^https?:\/\/(www\.)?/, "")}`,
           short_url: e.short,
         }),
       }
@@ -61,6 +61,7 @@ export default function Form() {
           // same shape as initial values
           setLoading(true);
           console.log(values);
+
           submitForm(values, resetForm);
         }}
         validateOnChange={false}
@@ -177,7 +178,7 @@ export default function Form() {
                             className="flex rounded outline outline-sky-600 bg-sky-600 px-4 text-center items-center justify-center text-white text-xl hover:outline-sky-700 hover:bg-sky-700 transition ease-in-out gap-2"
                             onClick={() =>
                               navigator.clipboard.writeText(
-                                `https://ezurl.link/${prevShortLink}`
+                                `ezurl.link/${prevShortLink}`
                               )
                             }
                           >
@@ -402,6 +403,10 @@ export default function Form() {
           </div>
         )}
       </Formik>
+      <div
+        id="how-it-works"
+        className="flex flex-col w-full scroll-smooth"
+      ></div>
     </div>
   );
 }

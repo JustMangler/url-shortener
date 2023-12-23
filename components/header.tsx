@@ -57,8 +57,8 @@ export default function Header({ links, color }: HeaderProps) {
                 <span className="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-sky-500" />
               </a>
               <a
-                href="/how-it-works"
-                className="group font-semibold leading-6 text-gray-900 hover:text-sky-500 p-3"
+                href="/#how-it-works"
+                className="scroll-smooth group font-semibold leading-6 text-gray-900 hover:text-sky-500 p-3"
               >
                 How It Works
                 <span className="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-sky-500" />
