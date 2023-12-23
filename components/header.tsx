@@ -24,7 +24,7 @@ export default function Header({ links, color }: HeaderProps) {
     <header
       className={`transition-colors ease-out duration-200 bg-${
         scrolled || color ? "white" : "main"
-      } sticky top-0 z-0`}
+      } sticky top-0 z-10`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
@@ -35,6 +35,13 @@ export default function Header({ links, color }: HeaderProps) {
         {links ? (
           <>
             <div className="hidden text:md lg:flex lg:gap-x-12">
+              <a
+                href="/"
+                className="group font-semibold leading-6 text-gray-900 hover:text-sky-500 p-3"
+              >
+                Home
+                <span className="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-sky-500"></span>
+              </a>
               <a
                 href="/dashboard"
                 className="group font-semibold leading-6 text-gray-900 hover:text-sky-500 p-3"
