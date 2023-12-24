@@ -5,8 +5,8 @@ module.exports = {
     async rewrites() {
       return [
         {
-          source: '/api',
-          destination: 'https://urlshortener.gigalixirapp.com/api',
+          source: '/api/create',
+          destination: 'https://urlshortener.gigalixirapp.com/api/create',
         },
       ]
     },
